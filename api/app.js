@@ -16,7 +16,7 @@ const data = require('./data/data.json');
   * une chaîne de caractères.
   */
 function demarrage(){
-    return "";
+    return "launching system";
 }
 
  /**
@@ -26,7 +26,7 @@ function demarrage(){
   * Elle retourne un objet javascript au format json.
   */
 function home(){
-    return undefined;
+    return {plat: "frites"}
 }
 
  /**
@@ -36,7 +36,8 @@ function home(){
   * Elle retourne un objet javascript contenant toutes les données.
   */
 function donnees(){
-    return {};
+    return data
+    ;
 }
 
  /**
@@ -48,7 +49,8 @@ function donnees(){
   * Cette liste sera contenu dans la clé communication
   */
 function comms(){
-    return {"communication":[]};
+    // console.log({communication: data.communication});
+    return {communication: data.communication};
 }
 
 
@@ -61,7 +63,7 @@ function comms(){
   * Cette liste sera contenue dans la clé objects
   */
 function objects(){
-    return {"objects":[]};
+    return {"objects":data.objects};
 }
 
  /**
@@ -73,7 +75,8 @@ function objects(){
   * Cette liste sera contenu dans la clé types
   */
 function types(){
-    return undefined;
+const allTypes = data.objects.find(object=>object.type)
+     return {"types": allTypes};
 }
 
 /**
